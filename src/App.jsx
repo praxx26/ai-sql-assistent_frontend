@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useCallback } from 'react';
 
-const API_BASE = 'http://127.0.0.1:8000';
+const API_BASE = import.meta.env.VITE_API_URL;
 
 // Animated background component with floating white orbs
 const AnimatedBackground = () => {
