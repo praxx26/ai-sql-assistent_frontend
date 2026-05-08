@@ -535,29 +535,43 @@ export default function App() {
 
       <div className="relative z-10 container mx-auto px-4 py-6 md:py-8 max-w-7xl">
         <div className="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
-          <div className="flex items-center gap-3">
-            <Logo size="large" />
-            <div>
-              <h1 className="text-4xl md:text-6xl font-light tracking-wide bg-gradient-to-r from-slate-300 via-zinc-400 to-slate-300 bg-clip-text text-transparent">
-                QueryForge
-              </h1>
-              <div className="flex items-center gap-3 mt-1">
-                <p className="text-gray-400 font-mono text-xs">Intelligent SQL workspace</p>
-                {mode === 'database' && isConnected && (
-                  <div className="flex items-center gap-1.5 bg-emerald-500/20 px-2 py-0.5 rounded-full">
-                    <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse"></div>
-                    <span className="text-[10px] font-mono text-emerald-400">DB Connected</span>
-                  </div>
-                )}
-                {mode === 'study' && (
-                  <div className="flex items-center gap-1.5 bg-purple-500/20 px-2 py-0.5 rounded-full">
-                    <div className="w-1.5 h-1.5 bg-purple-400 rounded-full animate-pulse"></div>
-                    <span className="text-[10px] font-mono text-purple-400">Learning Mode</span>
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
+          <div className="flex items-center">
+  <img
+    src="/favico2.png"
+    alt="QueryForge Logo"
+    className="w-30 object-cover drop-shadow-[0_0_15px_rgba(168,85,247,0.4)]"
+  />
+
+  <div>
+    <h1 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-white via-purple-200 to-purple-400 bg-clip-text text-transparent tracking-tight">
+      QueryForge
+    </h1>
+
+    <div className="flex items-center gap-2 mt-0.5">
+      <p className="text-gray-400 text-xs md:text-xs font-medium">
+        Intelligent SQL workspace
+      </p>
+
+      {mode === 'study' && (
+        <div className="flex items-center gap-1 bg-purple-500/15 border border-purple-400/25 px-1.5 py-0.5 rounded-full">
+          <div className="w-1.5 h-1.5 bg-purple-400 rounded-full animate-pulse"></div>
+          <span className="text-[9px] md:text-[10px] font-mono font-medium text-purple-300">
+            Learning Mode
+          </span>
+        </div>
+      )}
+
+      {mode === 'database' && isConnected && (
+        <div className="flex items-center gap-1 bg-emerald-500/15 border border-emerald-400/25 px-1.5 py-0.5 rounded-full">
+          <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse"></div>
+          <span className="text-[9px] md:text-[10px] font-mono font-medium text-emerald-300">
+            DB Connected
+          </span>
+        </div>
+      )}
+    </div>
+  </div>
+</div>
           
           <div className="flex gap-3">
             <button
